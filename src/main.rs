@@ -33,4 +33,22 @@ fn main() {
     let y: u8 = 255; // initializing it to 1000 wouldn't work since maximum possible val is 255
 
     let mut x: u8 = 255;
+
+    let z = 10.0;
+    println!("z is {}", x); // is 10
+
+    let k: f32 = 10.123423423523238484; // reaches limit of 64 unless you put :f32
+    println!("k is {}", k);
+
+    let a = 10.0;
+    let b = 3.0;
+    let c = a / b; // + - * / (just 3) % 
+    // let c = a as f64 / b;  => to get decimal points
+    // let c = a as f64 / (b + 1.0); => ordering in arithmetic operations
+    println!("c is {:.3}", c); // print c with exactly three decimal places of precision
+    println!("c is {:8.3}", c); // Pad 8 chars in front
+    println!("c is {:08.3}\na is {}", c, a); // Pad 8 leading zeros in front =? 0003.333
+    // You can put numbers within the curly braces to indicate which variable you are wishing to print & you can also put variable names staright in the braces
+    // {0:08.3}\na is {1}
+
 }
