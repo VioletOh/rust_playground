@@ -50,5 +50,34 @@ fn main() {
     println!("c is {:08.3}\na is {}", c, a); // Pad 8 leading zeros in front =? 0003.333
     // You can put numbers within the curly braces to indicate which variable you are wishing to print & you can also put variable names staright in the braces
     // {0:08.3}\na is {1}
+    bitwise();
+}
 
+fn bitwise() {
+    let mut value = 0b11110101u8; // Prefix 0b, you may add underscores for better readability
+    // Added suffix u8 to indicate it's an unsigned 8 bit integer
+    println!("value is {}", value);
+    println!("value is {:08b}", value); // padding leading 0s value is 11110101
+
+    // Bitwise Operators: NOT (!)
+    value = !value;
+    println!("value is {:08b}", value); // value is 00001010
+    // AND (&): Check value of a specific bit
+    value = value & 0b1111_0111;
+    println!("value is {:08b}", value); // value is 00000010
+
+    // OR (|): set value of a specific bit
+    value = value | 0b0100_0000;
+    println!("value is {:08b}", value); // 01000010
+
+    // XOR (^): if it differs
+    value = value ^0b0101_0101;
+    println!("value is {:08b}", value); // 00010111
+
+    // Bit shift
+    value = value << 4;
+    println!("value is {:08b}", value);
+
+    value = value >> 2;
+    println!("value is {:08b}", value);
 }
