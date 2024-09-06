@@ -56,6 +56,23 @@ fn main() {
     array();
     multi_dimensional_array();
     tuple();
+    functions();
+}
+
+fn say_a_number(number: i32) {
+    println!("number is {}", number);
+}
+fn functions() {
+    println!("My new function!");
+    say_a_number(13);
+
+    let x = 1;
+    let y = 2;
+    say_the_sum(x, y);
+}
+fn say_the_sum(a: u8, b:u8) {
+    let sum = a + b;
+    println!("sum is {}", sum);  
 }
 
 fn tuple() {
