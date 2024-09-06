@@ -51,6 +51,22 @@ fn main() {
     // You can put numbers within the curly braces to indicate which variable you are wishing to print & you can also put variable names staright in the braces
     // {0:08.3}\na is {1}
     bitwise();
+    boolean();
+}
+
+fn boolean() {
+    let a = true;
+    let b = false;
+    println!("a is {} and b is {}", a, b);
+    println!("NOT a is {}", !a);
+    println!("a AND b is {}", a & b);
+    println!("a OR b is {}", a | b);
+    println!("a XOR b is {}", a ^ b);
+
+    let c = (a ^ b) | (a & b);
+    println!("c is {}", c);
+
+    let d = (a ^ b) | panic!(); // panic will terminate program immediately, however left side is already True therefore it retruns true
 }
 
 fn bitwise() {
