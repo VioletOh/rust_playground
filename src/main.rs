@@ -52,6 +52,47 @@ fn main() {
     // {0:08.3}\na is {1}
     bitwise();
     boolean();
+    practice1();
+    array();
+    multi_dimensional_array();
+    tuple();
+}
+
+fn tuple() {
+    // Group multiple items of mixed data types
+}
+
+fn multi_dimensional_array() {
+    let parking_lot = [[1,2,3], [4,5,6]];
+    let number = parking_lot[1][2];
+    println!("number is {}", number);
+
+    let garage = [[[0; 100]; 20]; 5]; // Three dimensinal array
+}
+
+fn array() {
+    let mut letters = ['a', 'b', 'c'];
+    letters[0] = 'x';
+    let first_letter = letters[0];
+    println!("first_letter is {}", first_letter);
+
+    let numbers: [i32;5]; // to determine how much memory
+    numbers = [0; 5]; // 0 0 0 0 0
+    let index: usize = numbers.len();
+    println!("Index is {}", index);
+    println!("last number is {}", numbers[index - 1]); // if you try numbers[5] it fails due to index out of bounds
+
+    // usize Data Type
+    // size is based on number of bytes needed to reference memory
+}
+fn practice1() {
+    let a = 13;
+    let b = 2.3;
+    let c: f32 = 120.0;
+
+    let average = (a as f64 + b + c as f64) / 3.0;
+    assert_eq!(average, 45.1);
+    println!("Test passed!");
 }
 
 fn boolean() {
@@ -66,7 +107,7 @@ fn boolean() {
     let c = (a ^ b) | (a & b);
     println!("c is {}", c);
 
-    let d = (a ^ b) | panic!(); // panic will terminate program immediately, however left side is already True therefore it retruns true
+    //let d = (a ^ b) | panic!(); // panic will terminate program immediately, however left side is already True therefore it retruns true
 }
 
 fn bitwise() {
