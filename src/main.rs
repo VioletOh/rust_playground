@@ -57,10 +57,33 @@ fn main() {
     multi_dimensional_array();
     tuple();
     functions();
+    let result = square(13);
+    println!("result is {}", result);
+    let multi = multi_return(13);
+    println!("result for multi is {:?}", multi);
+    celsius_to_farenheit();
+}
+
+fn celsius_to_fahrenheit(temp: i32) -> i32 {
+    ((1.8 * temp as f64) + 32 as f64) as i32;
+}
+// If you don't include the return type:
+// Unit Data Type
+// You may use -> () or leave it as blank
+
+fn multi_return(x: i32) -> (i32, i32) {
+    println!("squaring multi {}", x);
+    return (x, x * x);
+    println!("End of function");
+}
+fn square(x: i32) -> i32 {
+    println!("squaring {}", x);
+    x * x // this is an expression -> result gets passed out as a return value
+    // Cannot add any code here unless you add return keyword and add semicolon. It is still unreachable
 }
 
 fn say_a_number(number: i32) {
-    println!("number is {}", number);
+    println!("number is {}", number); // called from functions() function
 }
 fn functions() {
     println!("My new function!");
