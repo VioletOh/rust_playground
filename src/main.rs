@@ -61,11 +61,15 @@ fn main() {
     println!("result is {}", result);
     let multi = multi_return(13);
     println!("result for multi is {:?}", multi);
-    celsius_to_farenheit();
+    let celsius_temp = 23.0;
+    let fahrenheit_temp = celsius_to_fahrenheit(celsius_temp);
+
+    assert_eq!(fahrenheit_temp, 73.4);
+    println!("Test passed!");
 }
 
-fn celsius_to_fahrenheit(temp: i32) -> i32 {
-    ((1.8 * temp as f64) + 32 as f64) as i32;
+fn celsius_to_fahrenheit(temp: f64) -> f64 {
+    ((1.8 * temp as f64) + 32 as f64)
 }
 // If you don't include the return type:
 // Unit Data Type
