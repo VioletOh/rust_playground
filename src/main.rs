@@ -66,8 +66,34 @@ fn main() {
 
     assert_eq!(fahrenheit_temp, 73.4);
     println!("Test passed!");
+
+    let x = 3;
+    if x + 1 != 3 {
+        println!("x + 1 is NOT 3!");
+    }
 }
 
+fn if_practice() {
+    let x = 3;
+    let y = 5;
+    if x > y {
+        println!("x is greater than y");
+    } else {
+        if x < y {
+            println!("x is less than y");
+        } else {
+            println!("x is equal to y");
+        }
+    }
+
+    if x > y {
+        println!("x is greater than y");
+    } else if x < y {
+        println!("x is less than y");
+    } else {
+        println!("x is equal to y");
+    }
+}
 fn celsius_to_fahrenheit(temp: f64) -> f64 {
     ((1.8 * temp as f64) + 32 as f64)
 }
