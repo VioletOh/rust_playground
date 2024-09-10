@@ -71,6 +71,41 @@ fn main() {
     if x + 1 != 3 {
         println!("x + 1 is NOT 3!");
     }
+    if_practice();
+    loop_practice();
+    while_loop();
+    for_loop();
+}
+
+fn for_loop() {
+    let message = ['h', 'e', 'l', 'l', 'o'];
+    for item in message.iter().enumerate(){ // not needing .iter() and .enumerate()
+        println!("item is {}", item);
+    }
+    // iterator, next() method
+}
+
+fn while_loop() {
+    // regular loops can return a value, but while loops can't
+    let mut count = 0;
+    let letters = ['a','b','c'];
+    while count < letters.len() {
+        println!("letter is {}", letters[count]);
+        count += 1;
+    }
+}
+
+fn loop_practice() {
+    let mut count = 0;
+
+    let result = loop {
+        if count == 10 {
+            break count * 10; // Only applied when the loop has terminated.
+        }
+        count += 1;
+        println!("count is {}", count);
+    };
+    println!("result is {}", result);
 }
 
 fn if_practice() {
@@ -86,6 +121,7 @@ fn if_practice() {
         }
     }
 
+    // else block cannot be empty
     if x > y {
         println!("x is greater than y");
     } else if x < y {
